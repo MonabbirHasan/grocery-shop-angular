@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="top-navigation">
+    <nav class="navbar navbar-expand-sm navbar-dark shadow-sm">
+      <div class="site-logo d-flex" style="cursor: pointer;" routerLink="admin">
+        <img
+          src="../../../../assets/img/vegetable-logo-removebg-.png"
+          alt="vegetable-food"
+          class="img-fluid"
+          width="100"
+        />
+        <h2 class="text-capitalize my-4" style="vertical-align:middle ;">food fectory</h2>
+      </div>
+      <form class="form-inline my-2 my-lg-0 form-group">
+        <input class="form-control m-sm-2" type="text" placeholder="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+        <div class="link-icon px-2 mx-2">
+          <div class="box" [hidden]="true" style="width:100px ;height:100px ;background: red;padding: 5px;position: absolute;z-index: 1;top: 10vw;">
+
+          </div>
+            <span class="mx-3 px-2 message">
+              <fa-icon
+                [icon]="faMessage"
+                [size]="'xl'"
+                style="color: orange;cursor: pointer;"
+              (click)="message_Box()"
+              ></fa-icon>
+            </span>
+          
+          <span class="mx-3 px-2">
+            <img
+              src="../../../assets/img/female.png"
+              class="shadow-sm"
+              width="80"
+              style="border: 3px solid orange; border-radius: 40px;"
+              alt=""
+            />
+          </span>
+        </div>
+      </form>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <main class="main-body">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

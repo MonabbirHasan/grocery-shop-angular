@@ -1,0 +1,167 @@
+<div class="container">
+    <div class="users-page">
+      <div class="user-content">
+        <div class="form-box shadow-sm p-3">
+          <h1 class="text-left text-uppercase">add new category</h1>
+          <form #FormValue="ngForm" (ngSubmit)="FortData(FormValue.value)">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Category Name</label>
+              <input
+              ngModel
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Please Enter categoryName"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">date</label>
+             <input
+             ngModel
+             name="date"
+                type="date"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Select Your Category</label>
+              <select
+              ngModel
+                name="category"
+                class="form-control"
+                id="exampleFormControlSelect1"
+              >
+                <option *ngFor="let item of CategoryData.GetAll" itemid="item.id" value="{{item.id}}">{{item.Name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">
+                Select status
+              </label>
+              <select 
+              ngModel
+              name="status"
+              class="form-control" 
+              id="exampleFormControlSelect2">
+                <option value="1">Active</option>
+                <option value="0">InActive</option>
+              </select>
+            </div>
+            <div class="form-group shadow-sm">
+              <label for="Upload" class="btn btn-success">Upload</label>
+              <input type="file" ngModel name="file"hidden class="form-control" id="Upload" />
+              <img src={{ImageUrl}} class="p-2 shadow-sm img-fluid" alt="" />
+            </div>
+            <div class="form-group shadow-sm">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
+        </div>
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+  <!--****************************************************************************user data table **********************************-->
+        <div class="container-xl shadow-sm mt-3 p-3">
+          <div class="table-responsive">
+            <div class="table-wrapper">
+              <div class="table-title">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <h2>
+                      User
+                      <b>Management</b>
+                    </h2>
+                  </div>
+                  <div class="col-sm-7">
+                    <a href="#" class="btn btn-secondary">
+                      <i class="material-icons">&#xE147;</i>
+                      <span>Add New User</span>
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                      <i class="material-icons">&#xE24D;</i>
+                      <span>Export to Excel</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <table class="table table-striped success table-hover">
+                <thead>
+                  <tr>
+                    <th>image</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Is_sub</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of CategoryData.GetAll" itemid="item.id">
+                    <td>
+                      <img
+                        src="{{item.Image}}"
+                        width="80"
+                        class="rounded"
+                        alt="Avatar"
+                      />
+                    </td>
+                    <td>{{item.CreateAt}}</td>
+                    <td>{{item.Name}}</td>
+                    <td>
+                      <ng-container *ngIf="item.id==item.Is_sub; else elseTemplate">
+                        {{item.Name}}
+                      </ng-container>
+                      <ng-template #elseTemplate>
+                        {{item.Name}}
+                      </ng-template>
+                    </td>
+                    <td>
+                      <ng-container *ngIf="item.Status==1 else elseTemplate">
+                        <span class="p-1 badge badge-success" style="font-size: 10px;">Active</span>
+                      </ng-container>
+                      <ng-template #elseTemplate>
+                        <span class="p-1 badge badge-danger" style="font-size: 10px;">InActive</span>
+                      </ng-template>
+                    </td>
+                    <td class="d-flex">
+                      <span class="badge badge-success m-1" style="font-size: 12px; cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                      <span class="badge badge-danger m-1" style="font-size: 12px; cursor: pointer;"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+              <div class="clearfix">
+                <div class="hint-text">
+                  Showing
+                  <b>5</b>
+                  out of
+                  <b>25</b>
+                  entries
+                </div>
+                <ul class="pagination">
+                  <li class="page-item disabled"><a href="#">Previous</a></li>
+                  <li class="page-item"><a href="#" class="page-link">1</a></li>
+                  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                  <li class="page-item active">
+                    <a href="#" class="page-link">3</a>
+                  </li>
+                  <li class="page-item"><a href="#" class="page-link">4</a></li>
+                  <li class="page-item"><a href="#" class="page-link">5</a></li>
+                  <li class="page-item">
+                    <a href="#" class="page-link">Next</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,109 @@
+<div class="container-xl shadow-sm mt-3 p-3">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-5">
+              <h2>
+                User
+                <b>Management</b>
+              </h2>
+            </div>
+            <div class="col-sm-7">
+              <a href="#" class="btn btn-secondary">
+                <i class="material-icons">&#xE147;</i>
+                <span>Add New User</span>
+              </a>
+              <a href="#" class="btn btn-secondary">
+                <i class="material-icons">&#xE24D;</i>
+                <span>Export to Excel</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped success table-hover">
+          <thead class="bg-primary">
+            <tr>
+              <th class="text-light">Image</th>
+              <th class="text-light">Buyer</th>
+              <th class="text-light">Category</th>
+              <th class="text-light">CreateAt</th>
+              <th class="text-light">Delivery_Date</th>
+              <th class="text-light">Descount</th>
+              <th class="text-light">Is_Valid</th>
+              <th class="text-light">Last_Delivery</th>
+              <th class="text-light">Price</th>
+              <th class="text-light">Product</th>
+              <th class="text-light">Quentity</th>
+              <th class="text-light">Status</th>
+              <th class="text-light">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of CardData.GetAll" itemid="item.id">
+              <td>
+                <img
+                  src="{{item.Image}}"
+                  width="80"
+                  class="rounded"
+                  alt="Avatar"
+                />
+              </td>
+              <td>{{item.Buyer}}</td>
+              <td>{{item.Category}}</td>
+              <td>{{item.CreateAt}}</td>
+              <td>{{item.Delivery_Date}}</td>
+              <td>{{item.Descount}}</td>
+              <td>{{item.Is_Valid}}</td>
+              <td>{{item.Last_Delivery}}</td>
+              <td>{{item.Price}}</td>
+              <td>{{item.Product}}</td>
+              <td>{{item.Quentity}}</td>
+              <!-- <td>
+                <ng-container *ngIf="item.id==item.Is_sub; else elseTemplate">
+                  {{item.Name}}
+                </ng-container>
+                <ng-template #elseTemplate>
+                  {{item.Name}}
+                </ng-template>
+              </td> -->
+              <td>
+                <ng-container *ngIf="item.Status==1 else elseTemplate">
+                  <span class="p-1 badge badge-success" style="font-size: 10px;">Active</span>
+                </ng-container>
+                <ng-template #elseTemplate>
+                  <span class="p-1 badge badge-danger" style="font-size: 10px;">InActive</span>
+                </ng-template>
+              </td>
+              <td class="d-flex">
+                <span class="badge badge-success m-1" style="font-size: 12px; cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                <span class="badge badge-danger m-1" style="font-size: 12px; cursor: pointer;"><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="clearfix">
+          <div class="hint-text">
+            Showing
+            <b>5</b>
+            out of
+            <b>25</b>
+            entries
+          </div>
+          <ul class="pagination">
+            <li class="page-item disabled"><a href="#">Previous</a></li>
+            <li class="page-item"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item active">
+              <a href="#" class="page-link">3</a>
+            </li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item"><a href="#" class="page-link">5</a></li>
+            <li class="page-item">
+              <a href="#" class="page-link">Next</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

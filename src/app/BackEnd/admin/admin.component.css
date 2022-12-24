@@ -1,0 +1,44 @@
+.wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.sidebar {
+  flex: .5;
+  /* flex-basis: 30%; */
+  padding: 10px;
+  background: #fff;
+  box-shadow: -2px -2px 5px #eee, 2px 2px 5px #eee;
+  height: 100%;
+}
+.main-body {
+  flex: 4;
+  padding: 10px;
+}
+.top-navigation {
+  padding: 5px;
+}
+.top-navigation .brands {
+  color: black;
+  font-weight: bolder;
+}
+.top-navigation .nav-link {
+  color: black;
+}
+.top-navigation .navbar-expand-sm {
+  justify-content: space-between;
+}
+.message {
+  position: relative;
+}
+.message::after {
+  content: '23';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-color: #1edf17;
+  border-radius: 100%;
+}

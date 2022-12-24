@@ -1,0 +1,66 @@
+.home-page {
+  padding: 5px;
+}
+.home-page .home_content {
+  padding: 5px;
+}
+.home-page .home_content .sales_report {
+  padding: 5px;
+  /* background-color: aquamarine; */
+}
+.home-page .home_content .sales_report .report_wrapper {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+}
+.home-page .home_content .sales_report .report_wrapper .report_box {
+  box-shadow: -2px -2px 5px #eee, 2px 2px 5px #eee, -2px -2px 5px #fff,
+    2px 2px 5px #eee;
+  background: '';
+  padding: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border-radius: 4px;
+}
+.home-page .home_content .sales_report .report_wrapper .report_box .content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: black;
+}
+.home-page .home_content .sales_report .report_wrapper .report_box .content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: black;
+}
+.home-page .home_content .sales_report .report_wrapper .report_box .icon {
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: orange;
+  color: white;
+  border-radius: 30px;
+}
+.home-page
+  .home_content
+  .sales_report
+  .report_wrapper
+  .report_box
+  .icon
+  fa-icon {
+  font-size: 1.5rem;
+}
+/* chart box design code here */
+.chart {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background: #fff;
+}
+.chart .chart-item {
+  padding: 5px;
+  overflow: hidden;
+}

@@ -1,0 +1,210 @@
+<div class="container">
+  <div class="users-page">
+    <div class="user-content">
+      <div class="form-box shadow-sm p-3">
+        <h1 class="text-left text-uppercase">add new wishlist</h1>
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">username</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Please Enter Your Name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Please Enter Your Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Please Enter Your Address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Phone</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Please Enter Your Phone Number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Select Your City</label>
+            <select
+              name="city"
+              class="form-control"
+              id="exampleFormControlSelect1"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">
+              Select Your State
+            </label>
+            <select class="form-control" id="exampleFormControlSelect2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">
+              Select Your type
+            </label>
+            <select class="form-control" id="exampleFormControlSelect2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">
+              select Status
+            </label>
+            <select class="form-control" id="exampleFormControlSelect2">
+              <option value="1">Active</option>
+              <option value="0">InActive</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="Please Enter Your Bio"
+            ></textarea>
+          </div>
+          <div class="form-group shadow-sm">
+            <label for="Upload" class="btn btn-success">Upload</label>
+            <input type="file" hidden class="form-control" id="Upload" />
+            <img src="" class="p-2 shadow-sm img-fluid" alt="" />
+          </div>
+          <div class="form-group shadow-sm">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </form>
+      </div>
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <!--****************************************************************************user data table **********************************-->
+      <div class="container-xl shadow-sm mt-3 p-3">
+        <div class="table-responsive">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col-sm-5">
+                  <h2>
+                    User
+                    <b>Management</b>
+                  </h2>
+                </div>
+                <div class="col-sm-7">
+                  <a href="#" class="btn btn-secondary">
+                    <i class="material-icons">&#xE147;</i>
+                    <span>Add New User</span>
+                  </a>
+                  <a href="#" class="btn btn-secondary">
+                    <i class="material-icons">&#xE24D;</i>
+                    <span>Export to Excel</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <table class="table table-striped success table-hover">
+              <thead>
+                <tr>
+                  <th>image</th>
+                  <th>Category</th>
+                  <th>CreateAt</th>
+                  <th>Price</th>
+                  <th>Product</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of WishlistDat.GetAll">
+                  <td>
+                    <img
+                      src="{{ item.Image }}"
+                      width="80"
+                      class="rounded shadow-sm"
+                      alt="Avatar"
+                    />
+                  </td>
+                  <td>{{ item.Category }}</td>
+                  <td>{{ item.CreateAt }}</td>
+                  <td>{{ item.Price }}</td>
+                  <td>{{ item.Product }}</td>
+                  <td>
+                    <ng-container *ngIf="item.Status == 1; else elseTemplate">
+                      <span class="badge badge-success">Active</span>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                      <span class="badge badge-danger">InActive</span>
+                    </ng-template>
+                  </td>
+                  <td class="d-flex">
+                    <span class="badge badge-success mx-2">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </span>
+                    <span class="badge badge-danger mx-2">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clearfix">
+              <div class="hint-text">
+                Showing
+                <b>5</b>
+                out of
+                <b>25</b>
+                entries
+              </div>
+              <ul class="pagination">
+                <li class="page-item disabled"><a href="#">Previous</a></li>
+                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item active">
+                  <a href="#" class="page-link">3</a>
+                </li>
+                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                <li class="page-item">
+                  <a href="#" class="page-link">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

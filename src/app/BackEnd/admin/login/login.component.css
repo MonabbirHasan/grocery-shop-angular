@@ -1,0 +1,9 @@
+.login-page{
+    padding: 10px;
+}
+.login-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-top: 20px;
+}

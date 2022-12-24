@@ -1,0 +1,32 @@
+.sidebar-container {
+  padding: 10px;
+}
+.sidebar-container .site-logo {
+  padding: 5px;
+}
+.sidebar-container .site-logo img {
+  border-radius: 10px;
+  filter: hue-rotate(30deg);
+}
+.sidebar-container .side-content {
+  padding: 5px;
+}
+.sidebar-container .side-content ul li {
+  list-style: none;
+  padding: 5px;
+  text-align: left;
+  line-height: 50px;
+}
+.sidebar-container .side-content ul li span {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: 0.2s all;
+}
+.sidebar-container .side-content ul li:hover {
+  background: #f3890f;
+  border-radius: 5px;
+  color: #fff;
+}
